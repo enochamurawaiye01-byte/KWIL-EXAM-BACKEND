@@ -10,15 +10,15 @@
    ============================================ */
 
 const ADMIN_NAV = [
-  { key: "dashboard", label: "Dashboard", href: "/pages/admin/dashboard.html" },
-  { key: "students", label: "Students", href: "/pages/admin/students.html" },
-  { key: "courses", label: "Courses", href: "/pages/admin/courses.html" },
-  { key: "exams", label: "Exams", href: "/pages/admin/exams.html" },
-  { key: "results", label: "Results", href: "/pages/admin/results.html" },
-  { key: "leaderboard", label: "Leaderboard", href: "/pages/admin/leaderboard.html" },
-  { key: "transcripts", label: "Transcripts", href: "/pages/admin/transcripts.html" },
-  { key: "reports", label: "Reports", href: "/pages/admin/reports.html" },
-  { key: "settings", label: "Settings", href: "/pages/admin/settings.html" },
+  { key: "dashboard", label: "Dashboard", href: "../admin/dashboard.html" },
+  { key: "students", label: "Students", href: "../admin/students.html" },
+  { key: "courses", label: "Courses", href: "../admin/courses.html" },
+  { key: "exams", label: "Exams", href: "../admin/exams.html" },
+  { key: "results", label: "Results", href: "../admin/results.html" },
+  { key: "leaderboard", label: "Leaderboard", href: "../admin/leaderboard.html" },
+  { key: "transcripts", label: "Transcripts", href: "../admin/transcripts.html" },
+  { key: "reports", label: "Reports", href: "../admin/reports.html" },
+  { key: "settings", label: "Settings", href: "../admin/settings.html" },
 ];
 
 function renderAdminLayout(activeKey, pageTitle) {

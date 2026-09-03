@@ -18,25 +18,7 @@
   <main class="admin-main">
     <header id="topbar-root"></header>
 
-    <div class="pending-notice">
-      <div><strong>Waiting on the backend.</strong> Planned endpoint: <code>GET /api/admin/students/:id</code>. Card below shows the intended layout with sample data.</div>
-    </div>
-
-    <div class="grid" style="grid-template-columns: 2fr 1fr;">
-      <div class="card">
-        <div class="card__header"><h3>Ada Obi</h3><span class="badge badge--success">Active</span></div>
-        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--space-4);">
-          <div><div class="text-faint" style="font-size:var(--fs-xs);">Registration number</div><div>KWIL-2026-000142</div></div>
-          <div><div class="text-faint" style="font-size:var(--fs-xs);">Phone</div><div>08012345678</div></div>
-          <div><div class="text-faint" style="font-size:var(--fs-xs);">Course</div><div>Graphic Design</div></div>
-          <div><div class="text-faint" style="font-size:var(--fs-xs);">Registered</div><div>—</div></div>
-        </div>
-      </div>
-      <div class="card">
-        <h4>Exam history</h4>
-        <p class="text-muted" style="font-size:var(--fs-sm); margin-top:var(--space-2);">Will list this student's completed exams once results endpoints are available.</p>
-      </div>
-    </div>
+    <div id="student-details-region"></div>
   </main>
 
   <script src="../../js/config.js"></script>

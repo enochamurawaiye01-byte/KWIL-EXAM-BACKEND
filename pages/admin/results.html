@@ -19,43 +19,20 @@
   <main class="admin-main">
     <header id="topbar-root"></header>
 
-    <div class="pending-notice">
-      <div><strong>Waiting on the backend.</strong> Planned endpoint: <code>GET /api/admin/results</code>. Table below shows the intended layout with sample rows.</div>
-    </div>
-
     <div class="toolbar">
       <div class="search-field toolbar__search">
         <svg class="search-field__icon" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <input class="input" type="text" placeholder="Search by student or exam…" disabled />
+        <input class="input" id="search-input" type="text" placeholder="Search by student or exam…" />
       </div>
       <div class="toolbar__filters">
-        <select class="select" disabled><option>Filter by course</option></select>
-        <select class="select" disabled><option>Filter by exam</option></select>
-        <select class="select" disabled><option>Filter by grade</option></select>
-        <select class="select" disabled><option>Filter by status</option></select>
+        <select class="select" id="course-filter"><option value="">Filter by course</option></select>
+        <select class="select" id="exam-filter"><option value="">Filter by exam</option></select>
+        <select class="select" id="grade-filter"><option value="">Filter by grade</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select>
+        <select class="select" id="status-filter"><option value="">Filter by status</option><option value="PASS">Pass</option><option value="FAIL">Fail</option></select>
       </div>
     </div>
 
-    <div class="table-wrap">
-      <table class="data-table">
-        <thead>
-          <tr><th>Student</th><th>Reg. No.</th><th>Course</th><th>Exam</th><th>Score</th><th>%</th><th>Grade</th><th>Status</th><th>Date</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Ada Obi</td>
-            <td>KWIL-2026-000142</td>
-            <td>Graphic Design</td>
-            <td>Final Examination</td>
-            <td>78/100</td>
-            <td>78%</td>
-            <td>B</td>
-            <td><span class="badge badge--success">Pass</span></td>
-            <td>—</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <div id="results-region"></div>
   </main>
 
   <script src="../../js/config.js"></script>

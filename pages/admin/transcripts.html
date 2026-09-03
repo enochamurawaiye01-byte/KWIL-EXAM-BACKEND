@@ -19,33 +19,14 @@
   <main class="admin-main">
     <header id="topbar-root"></header>
 
-    <div class="pending-notice">
-      <div><strong>Waiting on the backend.</strong> Planned endpoints: <code>GET /api/admin/transcripts</code> and <code>GET /api/admin/transcripts/:id/download</code>. Table below shows the intended layout with sample rows.</div>
-    </div>
-
     <div class="toolbar">
       <div class="search-field toolbar__search">
         <svg class="search-field__icon" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <input class="input" type="text" placeholder="Search students…" disabled />
+        <input class="input" id="search-input" type="text" placeholder="Search students…" />
       </div>
     </div>
 
-    <div class="table-wrap">
-      <table class="data-table">
-        <thead><tr><th>Student</th><th>Reg. No.</th><th>Course</th><th>Exam</th><th>Grade</th><th>Status</th><th>Actions</th></tr></thead>
-        <tbody>
-          <tr>
-            <td>Ada Obi</td>
-            <td>KWIL-2026-000142</td>
-            <td>Graphic Design</td>
-            <td>Final Examination</td>
-            <td>B</td>
-            <td><span class="badge badge--success">Pass</span></td>
-            <td><button class="btn btn--secondary btn--sm" disabled title="Backend endpoint not available yet">Download</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <div id="transcripts-region"></div>
   </main>
 
   <script src="../../js/config.js"></script>
