@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings — KWIL Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/reset.css" />
+  <link rel="stylesheet" href="../../css/variables.css" />
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/forms.css" />
+  <link rel="stylesheet" href="../../css/admin.css" />
+  <link rel="stylesheet" href="../../css/responsive.css" />
+</head>
+<body class="admin-shell">
+  <aside id="sidebar-root"></aside>
+  <main class="admin-main">
+    <header id="topbar-root"></header>
+
+    <div class="pending-notice">
+      <div><strong>Waiting on the backend.</strong> No admin profile/settings endpoint has been built yet, so this form can't save. Layout is ready for whenever it is.</div>
+    </div>
+
+    <div class="card" style="max-width:480px;">
+      <h4>Change password</h4>
+      <form class="stack" style="margin-top:var(--space-4);" novalidate>
+        <div class="field">
+          <label class="field__label" for="currentPassword">Current password</label>
+          <input class="input" type="password" id="currentPassword" name="currentPassword" />
+        </div>
+        <div class="field">
+          <label class="field__label" for="newPassword">New password</label>
+          <input class="input" type="password" id="newPassword" name="newPassword" />
+        </div>
+        <button type="submit" class="btn btn--primary" disabled title="Backend endpoint not available yet">Update password</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="../../js/config.js"></script>
+  <script src="../../js/api.js"></script>
+  <script src="../../js/auth.js"></script>
+  <script src="../../js/utils.js"></script>
+  <script src="../../js/notifications.js"></script>
+  <script src="../../js/admin/_layout.js"></script>
+  <script src="../../js/admin/settings.js"></script>
+</body>
+</html>

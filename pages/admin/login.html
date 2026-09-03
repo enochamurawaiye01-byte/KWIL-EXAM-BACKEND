@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login — KWIL Examination System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/reset.css" />
+  <link rel="stylesheet" href="../../css/variables.css" />
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/forms.css" />
+  <link rel="stylesheet" href="../../css/admin.css" />
+  <link rel="stylesheet" href="../../css/responsive.css" />
+</head>
+<body>
+  <div class="centered-screen">
+    <div class="card" style="max-width:400px; width:100%; padding: var(--space-7);">
+      <div class="brand" style="margin-bottom: var(--space-6); justify-content:center;">
+        <span class="brand__mark">KWIL</span> Admin
+      </div>
+      <h2 style="text-align:center; margin-bottom: var(--space-1);">Admin login</h2>
+      <p class="text-muted" style="text-align:center; margin-bottom: var(--space-6);">Sign in to manage the examination system.</p>
+
+      <form id="admin-login-form" class="stack" novalidate>
+        <div class="field" id="field-email">
+          <label class="field__label" for="email">Email</label>
+          <input class="input" type="email" id="email" name="email" placeholder="admin@kwi.edu" autocomplete="username" required />
+          <span class="field__error">Enter a valid email address.</span>
+        </div>
+        <div class="field" id="field-password">
+          <label class="field__label" for="password">Password</label>
+          <div class="password-toggle">
+            <input class="input" type="password" id="password" name="password" placeholder="Your password" autocomplete="current-password" required />
+            <button type="button" class="password-toggle__btn" data-toggle-for="password">Show</button>
+          </div>
+          <span class="field__error">Enter your password.</span>
+        </div>
+        <button type="submit" class="btn btn--primary btn--block" id="admin-login-submit">Log in</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="../../js/config.js"></script>
+  <script src="../../js/api.js"></script>
+  <script src="../../js/auth.js"></script>
+  <script src="../../js/utils.js"></script>
+  <script src="../../js/notifications.js"></script>
+  <script src="../../js/admin/login.js"></script>
+</body>
+</html>

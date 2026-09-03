@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exam — KWIL Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/reset.css" />
+  <link rel="stylesheet" href="../../css/variables.css" />
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/forms.css" />
+  <link rel="stylesheet" href="../../css/admin.css" />
+  <link rel="stylesheet" href="../../css/responsive.css" />
+</head>
+<body class="admin-shell">
+  <aside id="sidebar-root"></aside>
+  <main class="admin-main">
+    <header id="topbar-root"></header>
+
+    <div class="pending-notice">
+      <div><strong>Waiting on the backend.</strong> Planned endpoint: <code>POST /api/admin/exams</code> (and <code>PATCH /api/admin/exams/:id</code> for edits). The form is built and validated, but the submit button is disabled until that exists.</div>
+    </div>
+
+    <div class="card" style="max-width:640px;">
+      <form id="exam-form" class="stack" novalidate>
+        <div class="field" id="field-title">
+          <label class="field__label" for="title">Exam title</label>
+          <input class="input" type="text" id="title" name="title" placeholder="e.g. Graphic Design Final Examination" required />
+          <span class="field__error">Enter an exam title.</span>
+        </div>
+
+        <div class="field" id="field-courseId">
+          <label class="field__label" for="courseId">Course</label>
+          <select class="select" id="courseId" name="courseId" required>
+            <option value="" disabled selected>Loading courses…</option>
+          </select>
+          <span class="field__error">Select a course.</span>
+        </div>
+
+        <div class="field" id="field-description">
+          <label class="field__label" for="description">Description <span class="optional">(optional)</span></label>
+          <textarea class="input" id="description" name="description" placeholder="What this exam covers…"></textarea>
+        </div>
+
+        <div class="field" id="field-instructions">
+          <label class="field__label" for="instructions">Instructions <span class="optional">(optional)</span></label>
+          <textarea class="input" id="instructions" name="instructions" placeholder="Shown to students before they start…"></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="field" id="field-duration">
+            <label class="field__label" for="duration">Duration (minutes)</label>
+            <input class="input" type="number" id="duration" name="duration" min="1" placeholder="60" required />
+          </div>
+          <div class="field" id="field-totalMarks">
+            <label class="field__label" for="totalMarks">Total marks</label>
+            <input class="input" type="number" id="totalMarks" name="totalMarks" min="1" placeholder="100" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field" id="field-startDate">
+            <label class="field__label" for="startDate">Start date</label>
+            <input class="input" type="datetime-local" id="startDate" name="startDate" required />
+          </div>
+          <div class="field" id="field-endDate">
+            <label class="field__label" for="endDate">End date</label>
+            <input class="input" type="datetime-local" id="endDate" name="endDate" required />
+          </div>
+        </div>
+
+        <div class="cluster" style="justify-content:flex-end;">
+          <a class="btn btn--secondary" href="exams.html">Cancel</a>
+          <button type="submit" class="btn btn--primary" id="exam-submit" disabled title="Backend endpoint not available yet">Save exam</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script src="../../js/config.js"></script>
+  <script src="../../js/api.js"></script>
+  <script src="../../js/auth.js"></script>
+  <script src="../../js/utils.js"></script>
+  <script src="../../js/notifications.js"></script>
+  <script src="../../js/admin/_layout.js"></script>
+  <script src="../../js/admin/exam-form.js"></script>
+</body>
+</html>

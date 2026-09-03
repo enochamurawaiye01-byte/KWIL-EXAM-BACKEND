@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Successful — KWIL Examination System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/reset.css" />
+  <link rel="stylesheet" href="../../css/variables.css" />
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/student.css" />
+  <link rel="stylesheet" href="../../css/responsive.css" />
+</head>
+<body>
+  <div class="centered-screen">
+    <div class="card success-screen">
+      <div class="success-screen__badge" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h2>Registration successful</h2>
+      <p class="text-muted">Your account has been created. Use the registration number below to log in.</p>
+
+      <div class="success-screen__regno">
+        <div class="success-screen__regno-label">YOUR REGISTRATION NUMBER</div>
+        <div class="success-screen__regno-value" id="reg-number">—</div>
+      </div>
+      <p class="text-muted" style="font-size: var(--fs-sm);">Keep this number safe — you'll need it every time you log in.</p>
+
+      <div class="success-screen__actions">
+        <button class="btn btn--secondary btn--block" id="copy-btn">Copy registration number</button>
+        <a class="btn btn--primary btn--block" href="login.html">Continue to login</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/config.js"></script>
+  <script src="../../js/api.js"></script>
+  <script src="../../js/auth.js"></script>
+  <script src="../../js/utils.js"></script>
+  <script src="../../js/notifications.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Read from the response passed by register.js — never hardcoded.
+      const regNumber = sessionStorage.getItem("kwi_new_registration_number");
+      const el = document.getElementById("reg-number");
+      if (regNumber) {
+        el.textContent = regNumber;
+      } else {
+        // Someone landed here directly without registering — don't show a fake number.
+        el.textContent = "Not available";
+        notify.warning("No registration number found. Please register again if this seems wrong.");
+      }
+
+      document.getElementById("copy-btn").addEventListener("click", async () => {
+        if (!regNumber) return;
+        try {
+          await navigator.clipboard.writeText(regNumber);
+          notify.success("Registration number copied.");
+        } catch {
+          notify.error("Couldn't copy automatically — please copy it manually.");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

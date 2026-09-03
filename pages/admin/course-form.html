@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course — KWIL Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/reset.css" />
+  <link rel="stylesheet" href="../../css/variables.css" />
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/forms.css" />
+  <link rel="stylesheet" href="../../css/admin.css" />
+  <link rel="stylesheet" href="../../css/responsive.css" />
+</head>
+<body class="admin-shell">
+  <aside id="sidebar-root"></aside>
+
+  <main class="admin-main">
+    <header id="topbar-root"></header>
+
+    <div class="card" style="max-width:560px;">
+      <form id="course-form" class="stack" novalidate>
+        <div class="field" id="field-name">
+          <label class="field__label" for="name">Course name</label>
+          <input class="input" type="text" id="name" name="name" placeholder="e.g. Graphic Design" required />
+          <span class="field__error">Enter a course name.</span>
+        </div>
+
+        <div class="field" id="field-code">
+          <label class="field__label" for="code">Course code <span class="optional">(optional)</span></label>
+          <input class="input" type="text" id="code" name="code" placeholder="e.g. GRD101" />
+        </div>
+
+        <div class="field" id="field-description">
+          <label class="field__label" for="description">Description <span class="optional">(optional)</span></label>
+          <textarea class="input" id="description" name="description" placeholder="What this course covers…"></textarea>
+        </div>
+
+        <div class="cluster" style="justify-content:flex-end;">
+          <a class="btn btn--secondary" href="courses.html">Cancel</a>
+          <button type="submit" class="btn btn--primary" id="course-submit">Save course</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script src="../../js/config.js"></script>
+  <script src="../../js/api.js"></script>
+  <script src="../../js/auth.js"></script>
+  <script src="../../js/utils.js"></script>
+  <script src="../../js/notifications.js"></script>
+  <script src="../../js/admin/_layout.js"></script>
+  <script src="../../js/admin/course-form.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports — KWIL Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/reset.css" />
+  <link rel="stylesheet" href="../../css/variables.css" />
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/admin.css" />
+  <link rel="stylesheet" href="../../css/responsive.css" />
+</head>
+<body class="admin-shell">
+  <aside id="sidebar-root"></aside>
+  <main class="admin-main">
+    <header id="topbar-root"></header>
+
+    <div class="pending-notice">
+      <div><strong>Waiting on the backend.</strong> Planned endpoint: <code>GET /api/admin/reports</code>. Cards below show the intended layout.</div>
+    </div>
+
+    <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="card">
+        <h4>Performance by course</h4>
+        <p class="text-muted" style="font-size:var(--fs-sm); margin-top:var(--space-2);">Average scores and pass rates broken down by course.</p>
+        <button class="btn btn--secondary btn--sm" style="margin-top:var(--space-4);" disabled title="Backend endpoint not available yet">Generate</button>
+      </div>
+      <div class="card">
+        <h4>Exam summary</h4>
+        <p class="text-muted" style="font-size:var(--fs-sm); margin-top:var(--space-2);">Completion and pass/fail counts per exam.</p>
+        <button class="btn btn--secondary btn--sm" style="margin-top:var(--space-4);" disabled title="Backend endpoint not available yet">Generate</button>
+      </div>
+      <div class="card">
+        <h4>Student enrollment</h4>
+        <p class="text-muted" style="font-size:var(--fs-sm); margin-top:var(--space-2);">Enrollment trends over time.</p>
+        <button class="btn btn--secondary btn--sm" style="margin-top:var(--space-4);" disabled title="Backend endpoint not available yet">Generate</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../js/config.js"></script>
+  <script src="../../js/api.js"></script>
+  <script src="../../js/auth.js"></script>
+  <script src="../../js/utils.js"></script>
+  <script src="../../js/notifications.js"></script>
+  <script src="../../js/admin/_layout.js"></script>
+  <script src="../../js/admin/reports.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Questions — KWIL Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/reset.css" />
+  <link rel="stylesheet" href="../../css/variables.css" />
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/forms.css" />
+  <link rel="stylesheet" href="../../css/admin.css" />
+  <link rel="stylesheet" href="../../css/responsive.css" />
+</head>
+<body class="admin-shell">
+  <aside id="sidebar-root"></aside>
+  <main class="admin-main">
+    <header id="topbar-root"></header>
+
+    <div class="pending-notice">
+      <div><strong>Waiting on the backend.</strong> Planned endpoint: <code>POST /api/admin/exams/:examId/questions</code>. The form and list below are built and ready to wire up.</div>
+    </div>
+
+    <div class="grid" style="grid-template-columns: 1fr 1.2fr;">
+      <div class="card">
+        <h4>Add a question</h4>
+        <form id="question-form" class="stack" style="margin-top:var(--space-4);" novalidate>
+          <div class="field">
+            <label class="field__label" for="questionText">Question</label>
+            <textarea class="input" id="questionText" name="questionText" placeholder="What does CSS stand for?" required></textarea>
+          </div>
+          <div class="question-builder">
+            <div class="field"><label class="field__label" for="optionA">Option A</label><input class="input" id="optionA" name="optionA" required /></div>
+            <div class="field"><label class="field__label" for="optionB">Option B</label><input class="input" id="optionB" name="optionB" required /></div>
+            <div class="field"><label class="field__label" for="optionC">Option C</label><input class="input" id="optionC" name="optionC" required /></div>
+            <div class="field"><label class="field__label" for="optionD">Option D</label><input class="input" id="optionD" name="optionD" required /></div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label class="field__label" for="correctAnswer">Correct answer</label>
+              <select class="select" id="correctAnswer" name="correctAnswer" required>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field__label" for="marks">Marks</label>
+              <input class="input" type="number" id="marks" name="marks" min="1" value="2" required />
+            </div>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block" id="question-submit" disabled title="Backend endpoint not available yet">Add question</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h4>Questions in this exam</h4>
+        <p class="text-muted" style="font-size:var(--fs-sm); margin-top:var(--space-2);">Sample question shown below.</p>
+        <div class="table-wrap" style="margin-top:var(--space-4);">
+          <table class="data-table">
+            <thead><tr><th>#</th><th>Question</th><th>Correct</th><th>Marks</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>What does CSS stand for?</td><td>A</td><td>2</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../js/config.js"></script>
+  <script src="../../js/api.js"></script>
+  <script src="../../js/auth.js"></script>
+  <script src="../../js/utils.js"></script>
+  <script src="../../js/notifications.js"></script>
+  <script src="../../js/admin/_layout.js"></script>
+  <script src="../../js/admin/questions.js"></script>
+</body>
+</html>

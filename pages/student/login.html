@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Login — KWIL Examination System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/reset.css" />
+  <link rel="stylesheet" href="../../css/variables.css" />
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/forms.css" />
+  <link rel="stylesheet" href="../../css/student.css" />
+  <link rel="stylesheet" href="../../css/responsive.css" />
+</head>
+<body>
+  <div class="auth-screen">
+    <section class="auth-screen__panel">
+      <div class="brand" style="color:#fff;"><span class="brand__mark" style="color:#e4c675;">KWIL</span> Exams</div>
+      <div>
+        <h1>Welcome back. Your next examination is a few clicks away.</h1>
+        <p>Log in with the registration number you were issued when you signed up.</p>
+      </div>
+    </section>
+
+    <section class="auth-screen__form-side">
+      <div class="auth-card">
+        <div class="brand"><span class="brand__mark">KWIL</span> Exams</div>
+        <h2>Log in</h2>
+        <p class="text-muted">Enter your credentials to continue.</p>
+
+        <form id="login-form" class="stack" novalidate>
+          <div class="field" id="field-registrationNumber">
+            <label class="field__label" for="registrationNumber">Registration number</label>
+            <input class="input" type="text" id="registrationNumber" name="registrationNumber" placeholder="KWIL-2026-XXXXXX" autocomplete="username" required />
+            <span class="field__error">Enter your registration number.</span>
+          </div>
+
+          <div class="field" id="field-password">
+            <label class="field__label" for="password">Password</label>
+            <div class="password-toggle">
+              <input class="input" type="password" id="password" name="password" placeholder="Your password" autocomplete="current-password" required />
+              <button type="button" class="password-toggle__btn" data-toggle-for="password">Show</button>
+            </div>
+            <span class="field__error">Enter your password.</span>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--block" id="login-submit">Log in</button>
+        </form>
+
+        <p class="auth-card__footer">
+          New here? <a class="link" href="register.html">Create an account</a>
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <script src="../../js/config.js"></script>
+  <script src="../../js/api.js"></script>
+  <script src="../../js/auth.js"></script>
+  <script src="../../js/utils.js"></script>
+  <script src="../../js/notifications.js"></script>
+  <script src="../../js/student/login.js"></script>
+</body>
+</html>

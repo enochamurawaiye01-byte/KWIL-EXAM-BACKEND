@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register — KWIL Examination System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/reset.css" />
+  <link rel="stylesheet" href="../../css/variables.css" />
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/forms.css" />
+  <link rel="stylesheet" href="../../css/student.css" />
+  <link rel="stylesheet" href="../../css/responsive.css" />
+</head>
+<body>
+  <div class="auth-screen">
+    <section class="auth-screen__panel">
+      <div class="brand" style="color:#fff;"><span class="brand__mark" style="color:#e4c675;">KWIL</span> Exams</div>
+      <div>
+        <h1>Register once. Sit every examination you're enrolled for, in one place.</h1>
+        <p>You'll receive a unique registration number after signing up — keep it safe, it's how you log in.</p>
+      </div>
+    </section>
+
+    <section class="auth-screen__form-side">
+      <div class="auth-card">
+        <div class="brand"><span class="brand__mark">KWIL</span> Exams</div>
+        <h2>Create your account</h2>
+        <p class="text-muted">Fill in your details to get registered.</p>
+
+        <form id="register-form" class="stack" novalidate>
+          <div class="field" id="field-fullName">
+            <label class="field__label" for="fullName">Full name</label>
+            <input class="input" type="text" id="fullName" name="fullName" placeholder="e.g. Ada Obi" autocomplete="name" required />
+            <span class="field__error">Please enter your full name.</span>
+          </div>
+
+          <div class="field" id="field-phoneNumber">
+            <label class="field__label" for="phoneNumber">Phone number</label>
+            <input class="input" type="tel" id="phoneNumber" name="phoneNumber" placeholder="08012345678" autocomplete="tel" required />
+            <span class="field__error">Enter a valid 11-digit phone number.</span>
+          </div>
+
+          <div class="field" id="field-courseId">
+            <label class="field__label" for="courseId">Course</label>
+            <select class="select" id="courseId" name="courseId" required>
+              <option value="" disabled selected>Loading courses…</option>
+            </select>
+            <span class="field__error">Please select a course.</span>
+          </div>
+
+          <div class="field" id="field-password">
+            <label class="field__label" for="password">Password</label>
+            <div class="password-toggle">
+              <input class="input" type="password" id="password" name="password" placeholder="At least 8 characters" autocomplete="new-password" required />
+              <button type="button" class="password-toggle__btn" data-toggle-for="password">Show</button>
+            </div>
+            <span class="field__hint">Use at least 8 characters, including a letter and a number.</span>
+            <span class="field__error">Password doesn't meet the requirements.</span>
+          </div>
+
+          <div class="field" id="field-confirmPassword">
+            <label class="field__label" for="confirmPassword">Confirm password</label>
+            <div class="password-toggle">
+              <input class="input" type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" autocomplete="new-password" required />
+              <button type="button" class="password-toggle__btn" data-toggle-for="confirmPassword">Show</button>
+            </div>
+            <span class="field__error">Passwords don't match.</span>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--block" id="register-submit">Register</button>
+        </form>
+
+        <p class="auth-card__footer">
+          Already registered? <a class="link" href="login.html">Log in</a>
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <script src="../../js/config.js"></script>
+  <script src="../../js/api.js"></script>
+  <script src="../../js/auth.js"></script>
+  <script src="../../js/utils.js"></script>
+  <script src="../../js/notifications.js"></script>
+  <script src="../../js/student/register.js"></script>
+</body>
+</html>

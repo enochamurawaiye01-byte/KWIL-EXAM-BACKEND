@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KWIL Examination System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    .gate {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-8);
+      padding: var(--space-6);
+      text-align: center;
+    }
+    .gate__cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-5);
+      max-width: 560px;
+      width: 100%;
+    }
+    .gate-card {
+      text-align: left;
+    }
+    .gate-card h3 {
+      margin-bottom: var(--space-2);
+    }
+    .gate-card p {
+      margin-bottom: var(--space-5);
+      font-size: var(--fs-sm);
+    }
+    @media (max-width: 560px) {
+      .gate__cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="gate">
+    <div>
+      <div class="brand" style="justify-content:center; font-size: var(--fs-2xl); margin-bottom: var(--space-3);">
+        <span class="brand__mark">KWIL</span> Examination System
+      </div>
+      <p class="text-muted">Choose how you'd like to continue.</p>
+    </div>
+    <div class="gate__cards">
+      <div class="card gate-card">
+        <h3>Student</h3>
+        <p class="text-muted">Register, take exams, and view your results and transcript.</p>
+        <div class="stack">
+          <a class="btn btn--primary btn--block" href="pages/student/login.html">Student Login</a>
+          <a class="btn btn--secondary btn--block" href="pages/student/register.html">Register</a>
+        </div>
+      </div>
+      <div class="card gate-card">
+        <h3>Administrator</h3>
+        <p class="text-muted">Manage students, courses, exams, and results.</p>
+        <div class="stack">
+          <a class="btn btn--primary btn--block" href="pages/admin/login.html">Admin Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

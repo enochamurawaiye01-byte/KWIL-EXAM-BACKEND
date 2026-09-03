@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Results — KWIL Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/reset.css" />
+  <link rel="stylesheet" href="../../css/variables.css" />
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/forms.css" />
+  <link rel="stylesheet" href="../../css/admin.css" />
+  <link rel="stylesheet" href="../../css/responsive.css" />
+</head>
+<body class="admin-shell">
+  <aside id="sidebar-root"></aside>
+  <main class="admin-main">
+    <header id="topbar-root"></header>
+
+    <div class="pending-notice">
+      <div><strong>Waiting on the backend.</strong> Planned endpoint: <code>GET /api/admin/results</code>. Table below shows the intended layout with sample rows.</div>
+    </div>
+
+    <div class="toolbar">
+      <div class="search-field toolbar__search">
+        <svg class="search-field__icon" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input class="input" type="text" placeholder="Search by student or exam…" disabled />
+      </div>
+      <div class="toolbar__filters">
+        <select class="select" disabled><option>Filter by course</option></select>
+        <select class="select" disabled><option>Filter by exam</option></select>
+        <select class="select" disabled><option>Filter by grade</option></select>
+        <select class="select" disabled><option>Filter by status</option></select>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>Student</th><th>Reg. No.</th><th>Course</th><th>Exam</th><th>Score</th><th>%</th><th>Grade</th><th>Status</th><th>Date</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ada Obi</td>
+            <td>KWIL-2026-000142</td>
+            <td>Graphic Design</td>
+            <td>Final Examination</td>
+            <td>78/100</td>
+            <td>78%</td>
+            <td>B</td>
+            <td><span class="badge badge--success">Pass</span></td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="../../js/config.js"></script>
+  <script src="../../js/api.js"></script>
+  <script src="../../js/auth.js"></script>
+  <script src="../../js/utils.js"></script>
+  <script src="../../js/notifications.js"></script>
+  <script src="../../js/admin/_layout.js"></script>
+  <script src="../../js/admin/results.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exam Instructions — KWIL Examination System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/reset.css" />
+  <link rel="stylesheet" href="../../css/variables.css" />
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/student.css" />
+  <link rel="stylesheet" href="../../css/responsive.css" />
+</head>
+<body class="page-shell">
+  <header id="navbar-root"></header>
+
+  <main class="container" style="padding-block: var(--space-6);">
+    <div class="card instructions-card">
+      <h2 id="exam-title" style="margin-top:var(--space-3);">Loading examination...</h2>
+      <p class="text-muted" id="exam-description"></p>
+
+      <div class="instructions-meta">
+        <div><div class="text-faint" style="font-size:var(--fs-xs);">Duration</div><div id="exam-duration">—</div></div>
+        <div><div class="text-faint" style="font-size:var(--fs-xs);">Questions</div><div id="exam-question-count">—</div></div>
+        <div><div class="text-faint" style="font-size:var(--fs-xs);">Total marks</div><div id="exam-total-marks">—</div></div>
+      </div>
+
+      <h4>Exam instructions</h4>
+      <ul class="instructions-list">
+        <li>You have 20 minutes to complete this examination.</li>
+        <li>Once the examination begins, the timer will start.</li>
+        <li>Your answers will be saved automatically.</li>
+        <li>You cannot restart the examination once started.</li>
+        <li>When time expires, your examination will be submitted automatically.</li>
+      </ul>
+
+      <button class="btn btn--primary btn--block" style="margin-top:var(--space-6);" id="start-exam-btn">
+        Start examination
+      </button>
+    </div>
+  </main>
+
+  <script src="../../js/config.js"></script>
+  <script src="../../js/api.js"></script>
+  <script src="../../js/auth.js"></script>
+  <script src="../../js/utils.js"></script>
+  <script src="../../js/notifications.js"></script>
+  <script src="../../js/student/_layout.js"></script>
+  <script>
+    auth.requireStudent();
+    document.addEventListener("DOMContentLoaded", async () => {
+      renderStudentNavbar("exams");
+      const examId = new URLSearchParams(window.location.search).get("examId");
+      const startButton = document.getElementById("start-exam-btn");
+      if (!examId) {
+        notify.error("No examination was selected.");
+        startButton.disabled = true;
+        return;
+      }
+
+      try {
+        const res = await api.get("/exam-sessions/available", { authAs: "student" });
+        const exam = (res?.data || []).find((item) => item.id === examId);
+        if (!exam) throw new Error("This examination is not available.");
+        document.getElementById("exam-title").textContent = exam.title;
+        document.getElementById("exam-description").textContent = exam.description || "";
+        document.getElementById("exam-duration").textContent = utils.formatDuration(exam.duration);
+        document.getElementById("exam-question-count").textContent = Math.min(exam.totalQuestions, 30);
+        document.getElementById("exam-total-marks").textContent = exam.totalMarks;
+        startButton.addEventListener("click", async () => {
+          utils.setButtonLoading(startButton, true, "Starting...");
+          try {
+            const started = await api.post(`/exam-sessions/${encodeURIComponent(examId)}/start`, {}, { authAs: "student" });
+            const sessionId = started?.data?.id;
+            if (!sessionId) throw new Error("The server did not return an exam session.");
+            window.location.href = `exam.html?sessionId=${encodeURIComponent(sessionId)}`;
+          } catch (err) {
+            notify.error(utils.safeErrorMessage(err));
+            utils.setButtonLoading(startButton, false);
+          }
+        });
+      } catch (err) {
+        notify.error(utils.safeErrorMessage(err));
+        startButton.disabled = true;
+      }
+    });
+  </script>
+</body>
+</html>

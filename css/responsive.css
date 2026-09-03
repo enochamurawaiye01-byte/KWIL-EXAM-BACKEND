@@ -1,0 +1,28 @@
+/* ============================================
+   RESPONSIVE — mobile-first overrides
+   (component/page files hold most breakpoints;
+   this file catches shared, cross-cutting cases)
+   ============================================ */
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: var(--fs-xl);
+  }
+  h2 {
+    font-size: var(--fs-lg);
+  }
+  .container {
+    padding-inline: var(--space-4);
+  }
+  .btn {
+    height: 46px;
+  }
+  .modal {
+    padding: var(--space-5);
+  }
+  .toast-region {
+    left: var(--space-4);
+    right: var(--space-4);
+    width: auto;
+  }
+}

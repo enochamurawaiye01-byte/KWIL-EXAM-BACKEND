@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exam in progress — KWIL Examination System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/reset.css" />
+  <link rel="stylesheet" href="../../css/variables.css" />
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/student.css" />
+  <link rel="stylesheet" href="../../css/responsive.css" />
+</head>
+<body>
+  <div class="exam-shell">
+    <div class="exam-topbar spread">
+      <strong id="exam-title-label">Graphic Design Final Examination</strong>
+      <div class="cluster">
+        <span class="badge badge--warning">Preview mode — sample questions</span>
+        <span class="exam-timer" id="exam-timer">60:00</span>
+      </div>
+    </div>
+
+    <div class="pending-notice" style="max-width:1080px; margin-inline:auto; margin-top:var(--space-5);">
+      <div>
+        <strong>Waiting on the backend.</strong> Questions, answer autosave
+        (<code>POST /api/student/exams/:examId/answers</code>) and submission
+        (<code>POST /api/student/exams/:examId/submit</code>) aren't connected yet —
+        this screen runs on three sample questions stored in memory so the timer,
+        navigation, and layout can be reviewed and reused as-is.
+      </div>
+    </div>
+
+    <div class="exam-layout">
+      <div class="card">
+        <div class="question-progress" id="question-progress">Question 1 of 3</div>
+        <p class="question-text" id="question-text"></p>
+        <div class="option-list" id="option-list"></div>
+
+        <div class="exam-nav-actions">
+          <button class="btn btn--secondary" id="prev-btn">Previous</button>
+          <button class="btn btn--secondary" id="next-btn">Next</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4>Question navigator</h4>
+        <div class="navigator-grid" id="navigator-grid" style="margin-top:var(--space-4);"></div>
+        <div class="navigator-legend">
+          <div><span class="navigator-legend__swatch" style="background:var(--color-success);"></span>Answered</div>
+          <div><span class="navigator-legend__swatch" style="background:var(--color-surface); border:1px solid var(--color-border);"></span>Unanswered</div>
+        </div>
+        <button class="btn btn--primary btn--block" style="margin-top:var(--space-6);" id="submit-btn">
+          Submit examination
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/config.js"></script>
+  <script src="../../js/api.js"></script>
+  <script src="../../js/auth.js"></script>
+  <script src="../../js/utils.js"></script>
+  <script src="../../js/notifications.js"></script>
+  <script src="../../js/student/exam.js"></script>
+</body>
+</html>
