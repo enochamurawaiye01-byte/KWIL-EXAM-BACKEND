@@ -19,42 +19,24 @@
   <main class="admin-main">
     <header id="topbar-root"></header>
 
-    <div class="pending-notice">
-      <div><strong>Waiting on the backend.</strong> Planned endpoints: <code>GET /api/admin/exams</code> and <code>POST /api/admin/exams</code>. Table below shows the intended layout with sample rows.</div>
-    </div>
-
     <div class="toolbar">
       <div class="search-field toolbar__search">
         <svg class="search-field__icon" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <input class="input" type="text" placeholder="Search exams…" disabled />
+        <input class="input" id="search-input" type="text" placeholder="Search exams…" />
       </div>
       <div class="toolbar__filters">
-        <select class="select" disabled>
-          <option>All statuses</option>
+        <select class="select" id="status-filter">
+          <option value="">All statuses</option>
+          <option value="DRAFT">Draft</option>
+          <option value="PUBLISHED">Published</option>
+          <option value="CLOSED">Closed</option>
+          <option value="ARCHIVED">Archived</option>
         </select>
       </div>
       <a class="btn btn--primary" href="exam-form.html">Create exam</a>
     </div>
 
-    <div class="table-wrap">
-      <table class="data-table">
-        <thead>
-          <tr><th>Exam</th><th>Course</th><th>Duration</th><th>Status</th><th>Actions</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Graphic Design Final Examination</td>
-            <td>Graphic Design</td>
-            <td>60 min</td>
-            <td><span class="status-dot status-dot--draft"></span>Draft</td>
-            <td class="row-actions">
-              <a class="btn btn--secondary btn--sm" href="exam-form.html?id=sample">Edit</a>
-              <a class="btn btn--secondary btn--sm" href="questions.html?examId=sample">Questions</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <div id="exams-region"></div>
   </main>
 
   <script src="../../js/config.js"></script>

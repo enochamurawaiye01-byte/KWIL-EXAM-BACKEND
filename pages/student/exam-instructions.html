@@ -29,7 +29,7 @@
 
       <h4>Exam instructions</h4>
       <ul class="instructions-list">
-        <li>You have 20 minutes to complete this examination.</li>
+        <li>You have 25 minutes to complete this examination.</li>
         <li>Once the examination begins, the timer will start.</li>
         <li>Your answers will be saved automatically.</li>
         <li>You cannot restart the examination once started.</li>
@@ -67,7 +67,7 @@
         document.getElementById("exam-title").textContent = exam.title;
         document.getElementById("exam-description").textContent = exam.description || "";
         document.getElementById("exam-duration").textContent = utils.formatDuration(exam.duration);
-        document.getElementById("exam-question-count").textContent = Math.min(exam.totalQuestions, 30);
+        document.getElementById("exam-question-count").textContent = Math.min(exam.totalQuestions, 50);
         document.getElementById("exam-total-marks").textContent = exam.totalMarks;
         startButton.addEventListener("click", async () => {
           utils.setButtonLoading(startButton, true, "Starting...");

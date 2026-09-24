@@ -18,25 +18,19 @@
   <main class="admin-main">
     <header id="topbar-root"></header>
 
-    <div class="pending-notice">
-      <div><strong>Waiting on the backend.</strong> Planned endpoint: <code>GET /api/admin/reports</code>. Cards below show the intended layout.</div>
-    </div>
-
+    <div id="reports-region"></div>
     <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
       <div class="card">
         <h4>Performance by course</h4>
-        <p class="text-muted" style="font-size:var(--fs-sm); margin-top:var(--space-2);">Average scores and pass rates broken down by course.</p>
-        <button class="btn btn--secondary btn--sm" style="margin-top:var(--space-4);" disabled title="Backend endpoint not available yet">Generate</button>
+        <div id="course-performance-region" style="margin-top:var(--space-4);"></div>
       </div>
       <div class="card">
         <h4>Exam summary</h4>
-        <p class="text-muted" style="font-size:var(--fs-sm); margin-top:var(--space-2);">Completion and pass/fail counts per exam.</p>
-        <button class="btn btn--secondary btn--sm" style="margin-top:var(--space-4);" disabled title="Backend endpoint not available yet">Generate</button>
+        <div id="exam-summary-region" style="margin-top:var(--space-4);"></div>
       </div>
       <div class="card">
         <h4>Student enrollment</h4>
-        <p class="text-muted" style="font-size:var(--fs-sm); margin-top:var(--space-2);">Enrollment trends over time.</p>
-        <button class="btn btn--secondary btn--sm" style="margin-top:var(--space-4);" disabled title="Backend endpoint not available yet">Generate</button>
+        <div id="enrollment-trend-region" style="margin-top:var(--space-4);"></div>
       </div>
     </div>
   </main>

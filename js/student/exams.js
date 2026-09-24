@@ -35,7 +35,7 @@ function renderExamList(exams) {
         <p class="text-muted" style="font-size:var(--fs-sm);">${utils.escapeHtml(exam.course?.name || "")}</p>
         <dl class="exam-card__meta">
           <div><dt>Duration</dt><dd>${utils.formatDuration(exam.duration)}</dd></div>
-          <div><dt>Questions</dt><dd>${Math.min(exam.totalQuestions || 0, 30)}</dd></div>
+          <div><dt>Questions</dt><dd>${Math.min(exam.totalQuestions || 0, 50)}</dd></div>
           <div><dt>Total marks</dt><dd>${exam.totalMarks}</dd></div>
         </dl>
       </div>

@@ -19,13 +19,9 @@
   <main class="admin-main">
     <header id="topbar-root"></header>
 
-    <div class="pending-notice">
-      <div><strong>Waiting on the backend.</strong> No admin profile/settings endpoint has been built yet, so this form can't save. Layout is ready for whenever it is.</div>
-    </div>
-
     <div class="card" style="max-width:480px;">
       <h4>Change password</h4>
-      <form class="stack" style="margin-top:var(--space-4);" novalidate>
+      <form id="password-form" class="stack" style="margin-top:var(--space-4);" novalidate>
         <div class="field">
           <label class="field__label" for="currentPassword">Current password</label>
           <input class="input" type="password" id="currentPassword" name="currentPassword" />
@@ -34,7 +30,7 @@
           <label class="field__label" for="newPassword">New password</label>
           <input class="input" type="password" id="newPassword" name="newPassword" />
         </div>
-        <button type="submit" class="btn btn--primary" disabled title="Backend endpoint not available yet">Update password</button>
+        <button type="submit" class="btn btn--primary" id="password-submit">Update password</button>
       </form>
     </div>
   </main>
